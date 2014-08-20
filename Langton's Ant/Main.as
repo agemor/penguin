@@ -1,6 +1,6 @@
 package  
 {
-	import automaton.LangdonAnt;
+	import automaton.LangtonAnt;
 	import flash.display.Bitmap;
 	import flash.display.SimpleButton;
 	import flash.display.Sprite;
@@ -11,7 +11,7 @@ package
 	import flash.utils.Timer;
 	import flash.utils.getTimer;
 	/**
-	 * 랭던의 개미 런처
+	 * 랭턴의 개미 런처
 	 * 
 	 * @author 김현준
 	 */
@@ -26,7 +26,7 @@ package
 		var stepsText:TextField;
 		
 		// 오토마톤
-		var langdon:LangdonAnt;
+		var langton:LangtonAnt;
 		
 		// 비트맵 캔버스
 		var canvas:Bitmap;
@@ -37,8 +37,8 @@ package
 		
 		public function Main() {	
 			
-			langdon = new LangdonAnt(500, 500);
-			canvas = new Bitmap(langdon.getBitmapData());
+			langton = new LangtonAnt(500, 500);
+			canvas = new Bitmap(langton.getBitmapData());
 			addChild(canvas);
 			
 			canvas.y = 65;
@@ -92,7 +92,7 @@ package
 		
 		private function onStartButtonClick(e:MouseEvent):void {
 			
-			langdon.rules = parseOption(optionsText.text)
+			langton.rules = parseOption(optionsText.text)
 			
 			speed = int(renderingSpeedText.text);			
 			timer.start();			
@@ -104,7 +104,7 @@ package
 		
 		private function onStopButtonClick(e:MouseEvent):void {
 			timer.stop();
-			langdon.clear();
+			langton.clear();
 		}
 		
 		private function onStageLoad(e:Event):void {
@@ -131,10 +131,10 @@ package
 			previous = current;
 			
 			canvas.bitmapData.lock();
-			for (var i:int = 0; i < speed; i++) langdon.step();
+			for (var i:int = 0; i < speed; i++) langton.step();
 			canvas.bitmapData.unlock();
 			
-			stepsText.text = String(langdon.stepCount) + "/" + Math.round(speed/delta*2);
+			stepsText.text = String(langton.stepCount) + "/" + Math.round(speed/delta*2);
 		}
 		
 		public function trim( s:String ):String{

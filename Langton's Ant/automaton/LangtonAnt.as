@@ -4,16 +4,16 @@ package automaton
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	/**
-	 * 랭던의 개미 시뮬레이터
+	 * 랭턴의 개미 시뮬레이터
 	 * 
 	 * @author 김현준
 	 */
-	public class LangdonAnt {
+	public class LangtonAnt {
 		
 		// 오토마톤 진행 상황이 표시될 비트맵 데이터
 		private var output:BitmapData;
 		
-		// 디폴트 값으로 설정할 랭던의 개미 규칙
+		// 디폴트 값으로 설정할 랭턴의 개미 규칙
 		public var rules:Array = [
 			{color:0x333333, clockwise:true},			
 					{color:0x000000, clockwise:false}
@@ -30,13 +30,13 @@ package automaton
 		public var stepCount:int = 0;
 		
 		/**
-		 * 새로운 랭던의 개미 오토마톤을 생성한다.
+		 * 새로운 랭턴의 개미 오토마톤을 생성한다.
 		 * 
 		 * @param	width 진행 상황이 표시될 비트맵의 가로 크기
 		 * @param	height 진행 상황이 표시될 비트맵의 세로 크기
-		 * @param	rules 랭던의 개미 규칙
+		 * @param	rules 랭턴의 개미 규칙
 		 */
-		public function LangdonAnt(width:int, height:int, rules:Array = null) {
+		public function LangtonAnt(width:int, height:int, rules:Array = null) {
 			
 			if (rules != null) this.rules = rules;
 			
